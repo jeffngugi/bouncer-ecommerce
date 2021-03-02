@@ -1,0 +1,13 @@
+.service{
+    text-align: center;
+    margin: 5px;
+}
+
+.service > *{
+    display: block;
+    padding: 14px 0;
+}
+
+.service i{
+    color: lightcoral;
+}

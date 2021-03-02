@@ -1,17 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -28,11 +14,195 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body{
+  /* display: flex; */
+  min-height:auto;
+  direction: ltr;
+}
+
+.h1{
+  font-size: 56px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.h2{
+  font-size: 48px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.h3{
+  font-size: 36px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.h4{
+  font-size: 24px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.h5{
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.p1{
+  font-size: 0.8rem;
+
+}
+
+.p2{
+  font-size: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  
+}
+
+.p3{
+  font-size: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  
+}
+
+.bg-deeppink{
+  background-color:deeppink;
+}
+
+.bg-gray{
+  background-color: lightgrey
+}
+.bg-honeydew{
+  background-color:honeydew ;
+}
+
+.cwhite{
+  color: white;
+}
+
+.cblack{
+  color: black;
+}
+
+.cgray{
+  color: gray;
+}
+
+.cred{
+  color: red;
+}
+/* Navbar styling starts here */
+.navbar-nav li{
+  padding: 0 18px;
+}
+
+.navbar-nav a{
+  color: black !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.navbar-nav a:hover{
+  color: #00bfff !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+/* Navbar styling ends here */
+
+
+/* Home */
+.home-page{
+
+}
+
+.home-page .landing-slider{
+  background-image: linear-gradient(to right, #ff1a8c , #8c1aff);
+  padding: 0 15%;
+  height: 500px;
+  position: relative;
+}
+
+.home-page .landing-slider .slider{
+    margin:0 30px;
+    padding:0 30px;
+    height: 500px;
+}
+
+.home-page .landing-slider .slider-text{
+  color: white;
+
+}
+
+/* .home-page .landing-slider .slider-text > *{
+  padding: x 0;
+
+} */
+
+.slider-text  > * {
+  display: block;
+  padding: 25px 0;
+  
+}
+
+.trendingItems{
+  background-color:aqua;
+  margin-top: -40px;
+  position: relative;
+  /* padding: 0.5rem; */
+}
+
+
+/* Best sellers */
+.best_sellers{
+  padding-top: 10px;
+  margin-top: 20px;
+}
+
+.best_sellers .header{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+/* Call to action */
+.callToaction{
+  background-color: #00bfff;
+  position: relative;
+  margin-top: 100px;
+}
+
+.callToaction .cta-text{
+  color: white;
+  
+  margin:70px 0;
+}
+
+
+
+.callToaction .cta-text > * {
+  display: block;
+  padding: 15px 0;
+  
+}
+
+.callToaction .cta-image{
+}
+
+/* other services */
+.otherServices{
+  margin-bottom: 5rem;
+  
+}
+
+/* latest news */
+.latestNews{
+  margin-bottom: 5rem;
+}
+
+/*featured  */
+.featured{
+  margin-bottom: 5rem;
 }
