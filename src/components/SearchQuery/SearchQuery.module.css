@@ -1,0 +1,19 @@
+.searchContainer{
+    float: right;
+    
+}
+
+.searchContainer button {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: rgb(0, 68, 255);
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    border-radius: 0 5px 5px 0;
+  }
+  

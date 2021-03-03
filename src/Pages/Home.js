@@ -5,6 +5,8 @@ import LatestNews from '../components/LatestNews/LatestNews';
 import OtherService from '../components/OtherService/OtherService';
 import ProductCard from '../components/ProductCard/ProductCard';
 import Featured from "../components/Featured/Featured";
+// import SearchQuery from "../components/SearchQuery/SearchQuery";
+import SearchQuery from '../components/SearchQuery/SearchQuery'
 
 
 
@@ -206,9 +208,9 @@ const Home = () => {
         return(
             <section className='homesearch'>
             <div className='container'>
-                <div className='row'>
-                    <div className='col-12'>
-                        Search form here
+                <div className='row my-5'>
+                    <div className='mx-auto'>
+                      <SearchQuery />
                     </div>
                 </div>
             </div>

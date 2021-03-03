@@ -56,7 +56,7 @@ body{
 }
 
 .p2{
-  font-size: 0.5rem;
+  font-size: 1rem;
   font-family: 'Courier New', Courier, monospace;
   
 }
@@ -92,6 +92,14 @@ body{
 
 .cred{
   color: red;
+}
+
+.cblue{
+  color: blue;
+}
+
+.cskyblue{
+  color: skyblue;
 }
 /* Navbar styling starts here */
 .navbar-nav li{
@@ -206,3 +214,8 @@ body{
 .featured{
   margin-bottom: 5rem;
 }
+
+
+
+
+/* footer */
