@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import Slider from "react-slick";
 import LatestNews from '../components/LatestNews/LatestNews';
@@ -7,10 +7,23 @@ import ProductCard from '../components/ProductCard/ProductCard';
 import Featured from "../components/Featured/Featured";
 // import SearchQuery from "../components/SearchQuery/SearchQuery";
 import SearchQuery from '../components/SearchQuery/SearchQuery'
+import {connect} from 'react-redux'
+import {getProducts} from '../actions/productAction'
 
 
 
-const Home = () => {
+const Home = ({products, getProducts}) => {
+
+    const [myProducts, setMyProducts] = useState(products.products)
+    useEffect(() => {
+        const fetchData = async () => {
+           await getProducts();
+           setMyProducts(products.products);
+        }
+      
+        fetchData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [getProducts]);
 
     const settings = {
         dots: false,
@@ -36,7 +49,7 @@ const Home = () => {
                             
                         </div>
                         <div className='col-6 slide-image text-center'>
-                            <img src={`/images/${image}.png`} style={{maxWidth:'100%', maxHeight:'90%', right:'0', bottom:'0', position:'absolute'}}/>
+                            <img src={`/images/${image}.png`} style={{maxWidth:'100%', maxHeight:'90%', right:'0', bottom:'0', position:'absolute'}} alt='img'/>
                         </div>
                    
                     
@@ -56,7 +69,7 @@ const Home = () => {
                             <p className={`h6 ${color}`}>$399</p>
                         </div>
                         <div className='col-6'>
-                            <img src={`/images/${image}.png`} style={{maxWidth:'100%', maxHeight:'90%', position:'absolute'}}/>
+                            <img src={`/images/${image}.png`} style={{maxWidth:'100%', maxHeight:'90%', position:'absolute'}} alt='imagesd'/>
                         </div>
                     </div>
                 </div>
@@ -106,14 +119,21 @@ const Home = () => {
                          </ul>                               
                     </div>
                     <div className='row'>
-                        <div className='col-sm-3'><ProductCard /></div>
+                    {products.loading || myProducts === null ? (
+            <p>Loading</p>
+          ) : (
+            myProducts.map(product => (
+              <div className='col-sm-3'><ProductCard product={product}/></div>
+            ))
+          )}
+                        {/* <div className='col-sm-3'><ProductCard /></div>
                         <div className='col-sm-3'>  <ProductCard /></div>
                         <div className='col-sm-3'>  <ProductCard /></div>
                         <div className='col-sm-3'>  <ProductCard /></div>
                         <div className='col-sm-3'>  <ProductCard /></div>
                         <div className='col-sm-3'>  <ProductCard /></div>
                         <div className='col-sm-3'>  <ProductCard /></div>
-                        <div className='col-sm-3'>  <ProductCard /></div>
+                        <div className='col-sm-3'>  <ProductCard /></div> */}
                     </div>
                     <div className='row my-5'>
                         <div className='mx-auto'>
@@ -138,7 +158,7 @@ const Home = () => {
                             
                         </div>
                         <div className='col-6 cta-image text-center'>
-                            <img src='/images/iphone7.png' style={{maxWidth:'100%', maxHeight:'120%', right:'0', bottom:'0', position:'absolute'}}/>
+                            <img src='/images/iphone7.png' style={{maxWidth:'100%', maxHeight:'120%', right:'0', bottom:'0', position:'absolute'}} alt='iamge'/>
                         </div>
                     </div>
                 </div>
@@ -241,6 +261,10 @@ const Home = () => {
     )
 }
 
-export default Home
+const mapStateToProps = state =>({
+    products:state.products
+});
 
+// export default Home
+export default connect(mapStateToProps, { getProducts })(Home);
 

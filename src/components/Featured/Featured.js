@@ -5,7 +5,7 @@ const Featured = ({title, image}) => {
     return (
         <div className='row'>
         <div className='col-4'>
-        <img src={`/images/${image}.png`} className={styles.img}/>
+        <img src={`/images/${image}.png`} className={styles.img} alt='sdsds'/>
         </div>
      
         <div className='col-8'>

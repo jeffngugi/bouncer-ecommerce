@@ -1,0 +1,227 @@
+[
+    {
+        "id":1,
+        "name":"Beats Solo2 On Ear Headphones - Black",
+        "category":"accessories",
+        "instock":10,
+        "rating":2,
+        "price":100,
+        "reviews":[
+            {
+                "id":1,
+                "user":"jeff",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"maxwell",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"jane",
+                "review":"best product"
+            }
+        ],
+        "information":"Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis."
+    
+    },
+    {
+        "id":2,
+        "name":"Apple Macbook Pro",
+        "category":"laptop",
+        "instock":5,
+        "rating":2,
+        "price":100,
+        "reviews":[
+            {
+                "id":1,
+                "user":"jeff",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"maxwell",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"jane",
+                "review":"best product"
+            }
+        ],
+        "information":"Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis."
+    
+    },
+    {
+        "id":3,
+        "name":"Lenovo yoga",
+        "category":"laptop",
+        "instock":5,
+        "rating":2,
+        "price":100,
+        "reviews":[
+            {
+                "id":1,
+                "user":"jeff",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"maxwell",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"jane",
+                "review":"best product"
+            }
+        ],
+        "information":"Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis."
+    
+    },
+    {
+        "id":4,
+        "name":"HP g3 Revolve",
+        "category":"laptop",
+        "instock":5,
+        "rating":2,
+        "price":100,
+        "reviews":[
+            {
+                "id":1,
+                "user":"jeff",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"maxwell",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"jane",
+                "review":"best product"
+            }
+        ],
+        "information":"Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis."
+    
+    },
+    {
+        "id":5,
+        "name":"Oppo A31",
+        "category":"phone",
+        "instock":5,
+        "rating":2,
+        "price":19000,
+        "reviews":[
+            {
+                "id":1,
+                "user":"edith",
+                "review":"best product"
+            }
+           
+        ],
+        "information":"Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis."
+    
+    },
+    {
+        "id":6,
+        "name":"Samsung s7",
+        "category":"phone",
+        "instock":5,
+        "rating":2,
+        "price":35000,
+        "reviews":[
+            {
+                "id":1,
+                "user":"jeff",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"maxwell",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"jane",
+                "review":"best product"
+            }
+        ],
+        "information":"Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis."
+    
+    },
+    {
+        "id":7,
+        "name":"TCL Smart 55 smart OLED",
+        "category":"tv",
+        "instock":5,
+        "rating":2,
+        "price":50000,
+        "reviews":[
+            {
+                "id":1,
+                "user":"jeff",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"maxwell",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"jane",
+                "review":"best product"
+            }
+        ],
+        "information":"Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis."
+    
+    },
+    {
+        "id":8,
+        "name":"Sony HomeTheater",
+        "category":"audio",
+        "instock":5,
+        "rating":2,
+        "price":2700,
+        "reviews":[
+            {
+                "id":1,
+                "user":"jeff",
+                "review":"best product"
+            }
+            
+        ],
+        "information":"Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis."
+    
+    },
+    {
+        "id":9,
+        "name":"HP usb flash",
+        "category":"accessories",
+        "instock":5,
+        "rating":2,
+        "price":100,
+        "reviews":[
+            {
+                "id":1,
+                "user":"jeff",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"maxwell",
+                "review":"best product"
+            },
+            {
+                "id":2,
+                "user":"jane",
+                "review":"best product"
+            }
+        ],
+        "information":"Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis."
+    
+    }
+]

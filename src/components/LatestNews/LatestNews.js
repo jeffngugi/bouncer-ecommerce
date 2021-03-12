@@ -5,7 +5,7 @@ const LatestNews = ({title}) => {
     return (
     <div className='row'>
         <div className='col-4'>
-        <img src='/images/gopro.png' className={styles.img}/>
+        <img src='/images/gopro.png' className={styles.img} alt='sdsd'/>
         </div>
      
         <div className='col-8'>

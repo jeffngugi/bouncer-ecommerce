@@ -56,8 +56,7 @@ body{
 }
 
 .p2{
-  font-size: 1rem;
-  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
   
 }
 
@@ -74,10 +73,38 @@ body{
 .bg-gray{
   background-color: lightgrey
 }
+
+.bg-lightgray{
+  background-color: #f8f4fc;
+}
 .bg-honeydew{
   background-color:honeydew ;
 }
 
+.bg-blue{
+  background-color: #2e90e5;
+}
+
+.bg-fblue{
+  background-color: blue;
+}
+
+
+.bg-lightblue{
+  background-color: #00bfff;
+}
+
+.bg-lighterblue{
+  background-color: #e6f9ff;
+}
+
+.cblue{
+  color: #2e90e5;
+}
+
+.clightblue{
+  color: #00bfff;
+}
 .cwhite{
   color: white;
 }
@@ -100,6 +127,11 @@ body{
 
 .cskyblue{
   color: skyblue;
+}
+
+.fitImg{
+  max-width: 100%;
+  max-height: 100%;
 }
 /* Navbar styling starts here */
 .navbar-nav li{

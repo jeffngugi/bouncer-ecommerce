@@ -18,8 +18,8 @@ const Footer = () => {
                         <h2 className='h6'>Follow US</h2>
                         <p className='p1 cgray'>Since the 1500s, when an unknown printer took a galley of type and scrambled.</p>
                         <p className=''>
-                            <a target='_blank' href='https://www.facebook.com/'> <i class="fab fa-facebook-f mx-2 cblue"></i> </a>
-                            <a href='_blank' href='https://twitter.com/home?lang=en'><i class="fab fa-twitter mx-2 cskyblue"></i></a>
+                            <a target='_blank' rel="noreferrer" href='https://www.facebook.com/'> <i className="fab fa-facebook-f mx-2 cblue"></i> </a>
+                            <a target='_blank' rel="noreferrer" href='https://twitter.com/home?lang=en'><i className="fab fa-twitter mx-2 cskyblue"></i></a>
                             
                         </p>
                     </div>
@@ -83,7 +83,7 @@ const Footer = () => {
             <div className='container'>
                 <div className='row'>
                     <div className='col-sm-6'><p className='p1 cgray'>© 2021 Ecommerce theme by www.jeffngugi.com</p></div>
-                    <div className='col-sm-6 px-10'><p className='p2 float-sm-right '><i class="fab fa-cc-mastercard mx-2"></i><i class="fab fa-cc-paypal mx-2"></i><i class="fab fa-cc-visa mx-2"></i></p></div>
+                    <div className='col-sm-6 px-10'><p className='p2 float-sm-right '><i className="fab fa-cc-mastercard mx-2"></i><i className="fab fa-cc-paypal mx-2"></i><i className="fab fa-cc-visa mx-2"></i></p></div>
                 </div>
             </div>
         </section>
