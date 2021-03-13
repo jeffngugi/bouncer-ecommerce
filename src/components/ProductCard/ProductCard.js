@@ -5,7 +5,7 @@ import Cost from '../Cost';
 import {Link} from 'react-router-dom'
 
 const ProductCard = ({product}) => {
-    console.log(product)
+    // console.log(product)
     const {name, rating, price, id} = product;
     return (
         <div className="card p-2 shadow-sm mb-2">

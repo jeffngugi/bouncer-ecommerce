@@ -7,17 +7,18 @@ import BeautyStars from "beauty-stars";
 import Cost from '../components/Cost'
 import { useParams } from 'react-router-dom'
 import CatFav from '../components/CatFav/CatFav';
+import {Tabs, Tab} from 'react-bootstrap'
 
 const Product = ({product,randomProduct, loading, getRandomProduct, getProduct}) => {
+    const [key, setKey] = useState('home');
 
     const [myProduct, setMyProduct] = useState(null)
     let {productId} = useParams()
-    console.log(productId)
      useEffect(() => {
         
         const fetchData = async ()=>{
             await getRandomProduct();
-            await getProduct();
+            await getProduct(productId);
             setMyProduct(product);
 
         }
@@ -25,8 +26,8 @@ const Product = ({product,randomProduct, loading, getRandomProduct, getProduct})
          
       }, [setMyProduct]);
 
-      console.log(product)
-    
+      console.log(myProduct)
+    const {id, name, information, price, rating, category, reviews} = product; 
       
    
     return (
@@ -34,7 +35,12 @@ const Product = ({product,randomProduct, loading, getRandomProduct, getProduct})
         <Breadcrumb />
         <div className='container'>
         <div className='row'>
-            <div className='col-sm-9'>
+         <div className='col-sm-9'>
+         {
+             loading || product === null ? (
+                 <p>Loading</p>
+             ):(
+         <>
             <div className='row'>
                 <div className='col-sm-5'>
                     <div className='bg-gray'>
@@ -43,10 +49,10 @@ const Product = ({product,randomProduct, loading, getRandomProduct, getProduct})
                    
                 </div>
                 <div className='col-sm-7'>
-                    <h2 className='h5'>Beats Solo2 On Ear Headphones - Black</h2>
+                    <h2 className='h5'>{name}</h2>
                     <div className='p2 d-flex p-1 my-1'>
                     <BeautyStars value={2} size='10px' gap='4px' className='my-1'/>
-                    <p className='cgray mx-2'>0 reviews</p>
+                    <p className='cgray mx-2'>{(reviews.length)} reviews</p>
                     <p className='cblue '>Submit a review</p>
                     </div>
                     <hr />
@@ -57,11 +63,11 @@ const Product = ({product,randomProduct, loading, getRandomProduct, getProduct})
                     </div>
                     <div className='row'>
                         <div className='col-4'><p className='font-weight-bold p2'>Category:</p></div>
-                        <div className='col-8'><p className='p2'>In stock</p></div>
+                        <div className='col-8'><p className='p2'>{category}</p></div>
                     </div>
                     <div className='row'>
                         <div className='col-4'><p className='font-weight-bold p2'>Free shipping:</p></div>
-                        <div className='col-8'><p className='p2'>In stock</p></div>
+                        <div className='col-8'><p className='p2'></p></div>
                     </div>
                    
                     <hr />
@@ -99,11 +105,48 @@ const Product = ({product,randomProduct, loading, getRandomProduct, getProduct})
                         </div>
                     </div>
 
+
                 </div>
             </div>
-            </div>
-            <div className='col-sm-3'>
-            <h2 className='cgray h4 m-2'> BEST SELLER </h2>
+            <div className='row'>   
+                <Tabs
+                id="controlled-tab-example"
+                activeKey={key}
+                onSelect={(k) => setKey(k)}
+                >
+        
+                    <Tab eventKey="home" title="Product Infomation">
+                        <div className='px-3 py-1'>
+                            <p className='pt-2'>{information}</p>
+                        </div>
+                    </Tab>
+                    {
+                        reviews.length > 0 &&
+                    
+                    <Tab eventKey="reviews" title="Reviews">
+                    <div className='px-3 py-1 bg-gray ml-0'>
+                        
+                        <p className='pt-2'>Reviews goes here &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+                        {
+                            reviews.map(review => <p>This is a </p>)
+                        }
+                        </div>
+                    </Tab>
+}
+            
+        
+                </Tabs>
+   
+     </div>
+     </>
+       
+       )
+    }
+    </div>
+   
+   
+    <div className='col-sm-3'>
+    <h2 className='cgray h4 m-2'> BEST SELLER </h2>
                 {
                     loading || randomProduct === null ?(
                         <p>Loading</p>
@@ -123,6 +166,38 @@ const Product = ({product,randomProduct, loading, getRandomProduct, getProduct})
                 </div>
             </div>
         </div>
+        <div className='row my-4'>
+        <div className='mx-auto '>
+                        <p className="h4">RELATED PRODUCTS</p>
+                        </div>
+        </div>
+        <div className='row'>
+            <div className='col-sm-3'>
+            {
+                    loading || randomProduct === null ?(
+                        <p>Loading</p>
+                    ):(
+                        
+                        
+                        <ProductCard product={randomProduct} />
+                        
+                    )
+                }
+            </div>
+            <div className='col-sm-3'>
+            {
+                    loading || randomProduct === null ?(
+                        <p>Loading</p>
+                    ):(
+                        
+                        
+                        <ProductCard product={randomProduct} />
+                        
+                    )
+                }
+            </div>
+        </div>
+
         </div>
         </>
     )
@@ -134,14 +209,6 @@ const mapStateToProps = state =>({
     randomProduct:state.products.randomProduct
 });
 
-// export default Product
+
 export default connect(mapStateToProps, { getRandomProduct, getProduct })(Product);
 
-//     const fetchData = async()=>{
-    //         getRandomProduct();
-    //         setMyProduct(product)
-    //     }
-    //      console.log(myProduct)
-    //      fetchData()
-    //     //  console.log(product)
-    //   }, [getProducts]);

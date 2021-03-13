@@ -20,10 +20,10 @@ export const getProducts = ()=> async dispatch =>{
 
 
 
-export const getProduct = () => (dispatch) => {
+export const getProduct = (id) => (dispatch) => {
     dispatch(productLoading());
     // console.log('get product')
-    axios.get('/products/3', config)
+    axios.get(`/products/${id}`, config)
       .then((res) =>
         dispatch({
           type: GET_PRODUCT,
