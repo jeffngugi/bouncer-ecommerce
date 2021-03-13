@@ -6,7 +6,7 @@ import {getRandomProduct, getProduct} from '../actions/productAction'
 import BeautyStars from "beauty-stars";
 import Cost from '../components/Cost'
 import { useParams } from 'react-router-dom'
-import CatFav from '../components/CatFav/CatFav';
+import CatFav from '../components/Cart/CatFav';
 import {Tabs, Tab} from 'react-bootstrap'
 
 const Product = ({product,randomProduct, loading, getRandomProduct, getProduct}) => {

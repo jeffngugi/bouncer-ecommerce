@@ -1,7 +1,7 @@
 import React from 'react'
 import Cost from '../Cost'
 import styles from './ProductCard.module.css'
-import CatFav from '../CatFav/CatFav'
+import CatFav from '../Cart/CatFav'
 
 
 const ProductCardList = ({product}) => {
