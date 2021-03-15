@@ -2,9 +2,9 @@
 import {GET_PRODUCT, GET_PRODUCTS,GET_RANDOM_PRODUCT, PRODUCTS_LOADING} from '../actions/types';
 
 const initialState = {
-    randomProduct:null,
-    product:null,
-    products:null,
+    randomProduct:{},
+    product:{},
+    products:[],
     loading:true
 }
 

@@ -10,13 +10,13 @@ const Order = ({onClick, status}) => {
         <select className='rounded p1'>
         <option value="grapefruit">Grapefruit</option>
         <option value="lime">Lime</option>
-        <option selected value="coconut">Coconut</option>
+        <option value="coconut">Coconut</option>
         <option value="mango">Mango</option>
         </select>
         </div>
         <div className="ml-auto p-2 d-flex">
-            <div className=''><button onClick={onClick} className='border-0' disabled={status}><i class="fas fa-th"></i></button></div>
-            <div className=''><button onClick={onClick} className='border-0' disabled={!status}><i class="fas fa-bars"></i></button></div>
+            <div className=''><button onClick={onClick} className='border-0' disabled={status}><i className="fas fa-th"></i></button></div>
+            <div className=''><button onClick={onClick} className='border-0' disabled={!status}><i className="fas fa-bars"></i></button></div>
         </div>
       </div>
     )

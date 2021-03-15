@@ -6,11 +6,11 @@ import {Link} from 'react-router-dom'
 
 const ProductCard = ({product}) => {
     // console.log(product)
-    const {name, rating, price, id} = product;
+    const {name, rating, price, id, avatar} = product;
     return (
         <div className="card p-2 shadow-sm mb-2">
         <div className={styles.container}>
-        <img src="/images/product.png" alt="Avatar" className={styles.image} />
+        <img src={`/images/${avatar}`} alt="Avatar" className={styles.image} />
         <div className={styles.overlay}>
             <div className={styles.text}>
                 <button type="button" className={`btn btn btn-outline-blue mx-1`}><i className="far fa-heart"></i></button>

@@ -4,43 +4,30 @@ import Order from '../components/Order/Order';
 import ProductCard from '../components/ProductCard/ProductCard'
 import ProductCardList from '../components/ProductCard/ProductCardList';
 import AccesoriesSideNav from '../components/AccesoriesSideNav/AccesoriesSideNav'
-import {connect} from 'react-redux'
+import { useDispatch, useSelector, shallowEqual} from 'react-redux'
 import {getProducts} from '../actions/productAction'
 
 
-const Accesories = ({products,getProducts }) => {
+const Accesories = ()=>{
 
+    const [sort, setSort] = useState({category:null, brand:null})
     const [grid, setGrid] = useState(true);
-    const [myProducts, setMyProducts] = useState(products.products)
+    const dispatch = useDispatch()
+    const {products, loading} = useSelector(state => state.products, shallowEqual)
+    // console.log(sort);
+     useEffect(() => {        
+        dispatch(getProducts(sort))
+      }, [sort,dispatch]);
 
-    // console.log(myproducts)
-
-    useEffect(() => {
-        const fetchData = async () => {
-           await getProducts();
-        //    await getProduct();
-           setMyProducts(products.products);
-        }
-        fetchData();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [getProducts]);
-
-    //   console.log(myProducts)
-    // useEffect(() => {
-    //     getProducts();
-    //   }, [getProducts]);
-
-    // console.log(products.loading)
-    // let allProducts = products.products
 
     const renderGrid = ()=>{
         return (
             <div className='row'>
-                {products.loading || myProducts === null ? (
+                {loading || products === null ? (
             <p>Loading</p>
           ) : (
-            myProducts.map(product => (
-              <div className='col-sm-4'><ProductCard product={product}/></div>
+            products.map(product => (
+              <div  key={product.id} className='col-sm-4'><ProductCard product={product}/></div>
             ))
           )}
                
@@ -51,16 +38,14 @@ const Accesories = ({products,getProducts }) => {
     const renderList = ()=>{
         return(
             <div className='row'>
-             {products.loading || myProducts === null ? (
+             {loading || products === null ? (
             <p>Loading</p>
           ) : (
-            myProducts.map(product => (
-                <ProductCardList product={product}/>
+            products.map(product => (
+                <ProductCardList product={product} key={product.id}/>
             ))
           )}
-            {/* <ProductCardList />
-            <ProductCardList />
-            <ProductCardList /> */}
+            
             </div>
         )
     }
@@ -75,7 +60,8 @@ const Accesories = ({products,getProducts }) => {
         <div className='container'>
             <div className='row'>
                 <div className='col-sm-3'>
-                    <AccesoriesSideNav />
+                    <AccesoriesSideNav onClick={({category, brand})=>setSort({...sort, category,brand })} />
+                    {/* <AccesoriesSideNav onClick={(category)=>setCategory(category)} /> */}
                 </div>
                     <div className='col-sm-9'>
                         <div className='row'>
@@ -99,10 +85,4 @@ const Accesories = ({products,getProducts }) => {
     )
 }
 
-
-const mapStateToProps = state =>({
-    products:state.products
-});
-
-// export default connect(mapStateToProps, {getProducts}) (Accesories)
-export default connect(mapStateToProps, { getProducts })(Accesories);
+export default Accesories;

@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Cost = () => {
+const Cost = ({price}) => {
     return (
-        <p className='p1 cgray'><span className='p1 cred'>$499</span> <del>$599</del></p>
+        <p className='p1 cgray'><span className='p1 cred'>ksh.{price}</span> <del> $599</del></p>
     )
 }
 

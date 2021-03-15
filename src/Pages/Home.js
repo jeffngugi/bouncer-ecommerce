@@ -5,26 +5,23 @@ import LatestNews from '../components/LatestNews/LatestNews';
 import OtherService from '../components/OtherService/OtherService';
 import ProductCard from '../components/ProductCard/ProductCard';
 import Featured from "../components/Featured/Featured";
-// import SearchQuery from "../components/SearchQuery/SearchQuery";
 import SearchQuery from '../components/SearchQuery/SearchQuery'
-import {connect} from 'react-redux'
+import {useDispatch, useSelector, shallowEqual} from 'react-redux'
 import {getProducts} from '../actions/productAction'
 
 
 
-const Home = ({products, getProducts}) => {
+const Home = () => {
 
-    const [myProducts, setMyProducts] = useState(products.products)
-    useEffect(() => {
-        const fetchData = async () => {
-           await getProducts();
-           setMyProducts(products.products);
-        }
-      
-        fetchData();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [getProducts]);
+    const [sort, setSort] = useState({category:null, brand:null})
+    const dispatch = useDispatch()
+    const {products, loading} = useSelector(state => state.products, shallowEqual)
+    
+     useEffect(() => {        
+        dispatch(getProducts(sort))
+      }, [sort,dispatch]);
 
+  
     const settings = {
         dots: false,
         infinite: true,
@@ -119,21 +116,14 @@ const Home = ({products, getProducts}) => {
                          </ul>                               
                     </div>
                     <div className='row'>
-                    {products.loading || myProducts === null ? (
+                    {loading || products === null ? (
             <p>Loading</p>
           ) : (
-            myProducts.map(product => (
-              <div className='col-sm-3'><ProductCard product={product}/></div>
+            products.map(product => (
+              <div className='col-sm-3' key={product.key}><ProductCard product={product}/></div>
             ))
           )}
-                        {/* <div className='col-sm-3'><ProductCard /></div>
-                        <div className='col-sm-3'>  <ProductCard /></div>
-                        <div className='col-sm-3'>  <ProductCard /></div>
-                        <div className='col-sm-3'>  <ProductCard /></div>
-                        <div className='col-sm-3'>  <ProductCard /></div>
-                        <div className='col-sm-3'>  <ProductCard /></div>
-                        <div className='col-sm-3'>  <ProductCard /></div>
-                        <div className='col-sm-3'>  <ProductCard /></div> */}
+                        
                     </div>
                     <div className='row my-5'>
                         <div className='mx-auto'>
@@ -261,10 +251,7 @@ const Home = ({products, getProducts}) => {
     )
 }
 
-const mapStateToProps = state =>({
-    products:state.products
-});
 
-// export default Home
-export default connect(mapStateToProps, { getProducts })(Home);
+
+export default Home
 

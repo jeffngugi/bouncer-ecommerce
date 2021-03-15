@@ -6,10 +6,13 @@ const config = {
     }
 };
 
-export const getProducts = ()=> async dispatch =>{
+export const getProducts = (sort)=> async dispatch =>{
+  const {category, brand} = sort
+  // console.log(sort)
+  // return
     dispatch(productLoading())
-   
-    await axios.get('/products', config)
+    const prodoctConfig = {...config, params:{category, brand}}
+    await axios.get('/products/', prodoctConfig)
     .then(res => dispatch({
         type: GET_PRODUCTS,
         payload: res.data
@@ -17,6 +20,8 @@ export const getProducts = ()=> async dispatch =>{
     .catch(err => console.log(err))
 
 }
+
+
 
 
 

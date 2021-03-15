@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import Breadcrumb from '../components/Breadcrumb/Breadcrumb'
 import ProductCard from '../components/ProductCard/ProductCard'
-import {connect} from 'react-redux'
+import {useDispatch, useSelector, shallowEqual} from 'react-redux'
 import {getRandomProduct, getProduct} from '../actions/productAction'
 import BeautyStars from "beauty-stars";
 import Cost from '../components/Cost'
@@ -9,26 +9,24 @@ import { useParams } from 'react-router-dom'
 import CatFav from '../components/Cart/CatFav';
 import {Tabs, Tab} from 'react-bootstrap'
 
-const Product = ({product,randomProduct, loading, getRandomProduct, getProduct}) => {
-    const [key, setKey] = useState('home');
-
-    const [myProduct, setMyProduct] = useState(null)
-    let {productId} = useParams()
-     useEffect(() => {
+    const Product = ()=>{
         
-        const fetchData = async ()=>{
-            await getRandomProduct();
-            await getProduct(productId);
-            setMyProduct(product);
+    const [key, setKey] = useState('home');
+    let {productId} = useParams()
+    const dispatch = useDispatch();
+    const {product, randomProduct, loading} = useSelector(state => state.products, shallowEqual)
+    
+    useEffect(() => {        
+        dispatch(getProduct(productId))
+        dispatch(getRandomProduct())
+      }, [productId, dispatch]);
+    
+    
+  
+  
 
-        }
-         fetchData();
-         
-      }, [setMyProduct]);
-
-      console.log(myProduct)
-    const {id, name, information, price, rating, category, reviews} = product; 
-      
+    const {id, name, information, price, rating, category, reviews, avatar} = product; 
+   console.log(reviews)
    
     return (
         <>
@@ -43,8 +41,8 @@ const Product = ({product,randomProduct, loading, getRandomProduct, getProduct})
          <>
             <div className='row'>
                 <div className='col-sm-5'>
-                    <div className='bg-gray'>
-                    <img src='/images/Beats.png' className='fitImg'/>
+                    <div className=''>
+                    <img src={`/images/${avatar}`} className='fitImg'/>
                     </div>
                    
                 </div>
@@ -52,11 +50,11 @@ const Product = ({product,randomProduct, loading, getRandomProduct, getProduct})
                     <h2 className='h5'>{name}</h2>
                     <div className='p2 d-flex p-1 my-1'>
                     <BeautyStars value={2} size='10px' gap='4px' className='my-1'/>
-                    <p className='cgray mx-2'>{(reviews.length)} reviews</p>
+                    <p className='cgray mx-2'>{(reviews && reviews.length) } reviews</p>
                     <p className='cblue '>Submit a review</p>
                     </div>
                     <hr />
-                    <Cost />
+                    <Cost price={price}/>
                     <div className='row'>
                         <div className='col-4'><p className='font-weight-bold p2'>Availability:</p></div>
                         <div className='col-8'><p className='p2'>In stock</p></div>
@@ -121,18 +119,23 @@ const Product = ({product,randomProduct, loading, getRandomProduct, getProduct})
                         </div>
                     </Tab>
                     {
-                        reviews.length > 0 &&
+                     reviews  && reviews.length > 0 &&
                     
                     <Tab eventKey="reviews" title="Reviews">
                     <div className='px-3 py-1 bg-gray ml-0'>
                         
                         <p className='pt-2'>Reviews goes here &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
                         {
-                            reviews.map(review => <p>This is a </p>)
+                            reviews.map(review => (
+                                <div className='d-flex'>
+                                    <p className='p2'> {review.user} </p>
+                                    <p className='p1 cgray'> {review.review} </p>
+                                </div>
+                            ))
                         }
                         </div>
                     </Tab>
-}
+                }
             
         
                 </Tabs>
@@ -173,7 +176,7 @@ const Product = ({product,randomProduct, loading, getRandomProduct, getProduct})
         </div>
         <div className='row'>
             <div className='col-sm-3'>
-            {
+            {/* {
                     loading || randomProduct === null ?(
                         <p>Loading</p>
                     ):(
@@ -194,7 +197,7 @@ const Product = ({product,randomProduct, loading, getRandomProduct, getProduct})
                         <ProductCard product={randomProduct} />
                         
                     )
-                }
+                } */}
             </div>
         </div>
 
@@ -203,12 +206,6 @@ const Product = ({product,randomProduct, loading, getRandomProduct, getProduct})
     )
 }
 
-const mapStateToProps = state =>({
-    product:state.products.product,
-    loading:state.products.loading,
-    randomProduct:state.products.randomProduct
-});
 
-
-export default connect(mapStateToProps, { getRandomProduct, getProduct })(Product);
+export default Product;
 

@@ -1,28 +1,29 @@
 import React, {useState} from 'react'
 
-const brands = {"apple":99, "LG":57, "Samsung":35, "Oppo":22};
-const categories = {"accessories":99, "laptop":57, "phone":35, "tv":22, "audio":10};
+const brands = {"apple":99, "beats":57, "lenovo":35, "Oppo":22, "hp":2, "samsung":1, "sony":2, "synix":1};
+const categories = { "accessories":99, "laptop":57, "phone":35, "tv":22, "audio":10};
 
-const SideNavLi =({name, value})=>{
+const SideNavLi =({name, category, brand, value, onClick})=>{
+    // console.log(category)
     return(
-        <li className="list-group-item d-flex justify-content-between align-items-center  bg-transparent p2 border-0">
+        <li className="list-group-item d-flex justify-content-between align-items-center  bg-transparent p2 border-0" onClick={()=>onClick({category, brand})}>
         {name}
             <span className="badge badge-pill">{value}</span>
         </li>
     )
 }
 
-const SideNavCard = ({title, price, setPrice})=>{
+const SideNavCard = ({title, price, setPrice, onClick})=>{
 
    let mybrands = Object.keys(brands).map(key => {
        return(
-                <SideNavLi name={key} value={brands[key]}/> 
+                <SideNavLi key={key} category={null} brand={key} name={key} value={brands[key]} onClick={({category, brand})=>onClick({category, brand})}/> 
        )
    })
 
    let myaccessories = Object.keys(categories).map(key => {
     return(
-             <SideNavLi name={key} value={categories[key]}/> 
+             <SideNavLi key={key} category={key} brand={null} name={key} value={categories[key]} onClick={({category, brand})=>onClick({category, brand})}/> 
     )
 })
 
@@ -68,16 +69,16 @@ const SideNavCard = ({title, price, setPrice})=>{
         </div>
     )
 }
-const AccesoriesSideNav = () => {
+const AccesoriesSideNav = ({onClick}) => {
 
     const [count, setCount] = useState(0);
 
     return (
         <>
-       <SideNavCard title='CATEGORIES'/>
+       <SideNavCard title='CATEGORIES' onClick={({category, brand})=>onClick({category, brand})}/>
        <SideNavCard title='PRICES' price={count} setPrice={setCount}/>
        <SideNavCard title='COLOR'/>
-       <SideNavCard title='BRAND'/>
+       <SideNavCard title='BRAND'onClick={({category, brand})=>onClick({category, brand})}/>
        
        
             </>

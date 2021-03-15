@@ -50,5 +50,5 @@
     "css-loader": "^5.1.0",
     "style-loader": "^2.0.0"
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "https://bouncer-project.herokuapp.com"
 }
