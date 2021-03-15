@@ -120,7 +120,8 @@ const Home = () => {
             <p>Loading</p>
           ) : (
             products.map(product => (
-              <div className='col-sm-3' key={product.key}><ProductCard product={product}/></div>
+                
+              <div className='col-sm-3' key={product.key}><ProductCard product={product}  key={product.key}/></div>
             ))
           )}
                         

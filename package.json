@@ -49,6 +49,5 @@
   "devDependencies": {
     "css-loader": "^5.1.0",
     "style-loader": "^2.0.0"
-  },
-  "proxy": "https://bouncer-project.herokuapp.com"
+  }
 }
