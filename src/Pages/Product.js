@@ -26,7 +26,7 @@ import {Tabs, Tab} from 'react-bootstrap'
   
 
     const {id, name, information, price, rating, category, reviews, avatar} = product; 
-   console.log(reviews)
+//    console.log(reviews)
    
     return (
         <>

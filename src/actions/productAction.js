@@ -32,7 +32,7 @@ export const getProducts = (sort)=> async dispatch =>{
 export const getProduct = (id) => (dispatch) => {
     dispatch(productLoading());
     // console.log('get product')
-    axios.get(`/products/${id}`, config)
+    axios.get(`${API_URL}/products/${id}`, config)
       .then((res) =>
         dispatch({
           type: GET_PRODUCT,
@@ -45,7 +45,9 @@ export const getProduct = (id) => (dispatch) => {
   export const getRandomProduct = () => (dispatch) => {
     dispatch(productLoading());
     // console.log('get product')
-    axios.get('/products/1', config)
+    const random = Math.floor(Math.random() * 10) + 1;
+    console.log(random)
+    axios.get(`${API_URL}/products/${random}`, config)
       .then((res) =>
         dispatch({
           type: GET_RANDOM_PRODUCT,

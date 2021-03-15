@@ -20,7 +20,7 @@ const Navbar = () => {
                     <Link className="nav-link" to='/'>HOME</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link" to='/products-grid'>STORE</Link>
+                    <Link className="nav-link" to='/store'>STORE</Link>
                     </li>
                     <li className="nav-item">
                     <Link className="nav-link" to='/products-list'>IPHONE</Link>
