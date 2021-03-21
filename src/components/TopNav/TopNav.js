@@ -10,7 +10,7 @@ const TopNav = () => {
     // console.log(cartItems?.length)
     let sum = Subtotal(cartItems)
     return (
-        <section className='top-nav bg-gray'>
+        <section className='top-nav'>
             <div className='container'>
                 
                      <div className="row d-flex justify-content-between px-4 mx-4">
