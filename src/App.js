@@ -8,6 +8,7 @@ import {Provider} from 'react-redux'
 import TopNav from './components/TopNav/TopNav';
 
 function App() {
+ 
   return (
    
     <Provider store={store}>

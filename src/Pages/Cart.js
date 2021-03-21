@@ -3,12 +3,15 @@ import Breadcrumb from '../components/Breadcrumb/Breadcrumb'
 import CartPlus from '../components/Cart/CartPlus'
 import {Link} from 'react-router-dom'
 import {useDispatch, useSelector, shallowEqual} from 'react-redux'
+import {Subtotal} from '../utils/CartUtils'
 
 
 const Cart = () => {
     const cart = useSelector((state) => state.cart, shallowEqual);
     const {cartItems} = cart;
-    console.log(cartItems)
+
+    let sum = Subtotal(cartItems);
+    
     return (
         <section className='cart'>
             <Breadcrumb />
@@ -74,7 +77,7 @@ const Cart = () => {
                     <div className='col-sm-4 px-1'>
                     <div className='row d-flex justify-content-between'>
                         <p>Subtotal</p>
-                        <p>$998</p>
+                        <p><span className='p2'>ksh.</span>{sum}</p>
                     </div>
                     <div className='row d-flex justify-content-between'>
                         <p>Shipping fee</p>
