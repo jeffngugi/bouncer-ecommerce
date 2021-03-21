@@ -12,7 +12,7 @@ const NotFound = () => {
                     <div className='col-sm-4  d-flex align-items-center'>
                         <div className=''>
                         <p className='h2'>Ooops!!</p>
-                        <p className='h6 cgray'>We couldn't find what you are looking for</p>
+                        <p className='p2 cgray'>We couldn't find what you are looking for</p>
                         <button className='border-0 rounded-pill p-2 my-2 p1 cwhite bg-deeppink' onClick={() => {history.goBack();}}>
                             Go back
                         </button>

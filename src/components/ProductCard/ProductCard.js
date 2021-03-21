@@ -3,9 +3,13 @@ import BeautyStars from "beauty-stars";
 import styles from './ProductCard.module.css'
 import Cost from '../Cost';
 import {Link} from 'react-router-dom'
+import {addToCart} from '../../actions/cartActions'
+import {useDispatch} from 'react-redux'
 
 const ProductCard = ({product}) => {
     // console.log(product)
+    const dispatch = useDispatch()
+
     const {name, rating, price, id, avatar} = product;
     return (
         <div className="card p-2 shadow-sm mb-2">
@@ -14,7 +18,7 @@ const ProductCard = ({product}) => {
         <div className={styles.overlay}>
             <div className={styles.text}>
                 <button type="button" className={`btn btn btn-outline-blue mx-1`}><i className="far fa-heart"></i></button>
-                <button onClick={()=>alert('added to cart')}type="button" className="btn btn btn-outline-blue mx-1"><i className="fas fa-cart-plus"></i></button>
+                <button onClick={()=>dispatch(addToCart(product))}type="button" className="btn btn btn-outline-blue mx-1"><i className="fas fa-cart-plus"></i></button>
             </div>
         </div>
         </div>

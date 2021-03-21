@@ -121,7 +121,7 @@ const Home = () => {
           ) : (
             products.map(product => (
                 
-              <div className='col-sm-3' key={product.key}><ProductCard product={product}  key={product.key}/></div>
+              <div className='col-sm-3' key={product.id}><ProductCard product={product}  key={product.key}/></div>
             ))
           )}
                         

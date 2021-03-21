@@ -7,7 +7,8 @@ const config = {
     }
 };
 
-console.log(API_URL);
+// console.log(API_URL);
+
 
 
 export const getProducts = (sort)=> async dispatch =>{

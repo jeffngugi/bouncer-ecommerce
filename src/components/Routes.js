@@ -13,7 +13,7 @@ const Routes = () => {
             <Route exact path="/cart" component={Cart} />
             <Route exact path="/product/:productId" component={Product} />
             <Route exact path="/store" component={Products} />
-            <Route exact path="/accesories" component={Accesories} />
+            {/* <Route exact path="/accesories" component={Accesories} /> */}
             <Route exact path="/product" component={SingleProduct} />
             <Route component={NotFound} />
             </Switch>

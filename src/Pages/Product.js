@@ -9,12 +9,15 @@ import { useParams } from 'react-router-dom'
 import CatFav from '../components/Cart/CatFav';
 import {Tabs, Tab} from 'react-bootstrap'
 
-    const Product = ()=>{
+
+
+const Product = ()=>{
         
     const [key, setKey] = useState('home');
     let {productId} = useParams()
     const dispatch = useDispatch();
     const {product, randomProduct, loading} = useSelector(state => state.products, shallowEqual)
+    const [count, setCount] = useState(1)
     
     useEffect(() => {        
         dispatch(getProduct(productId))
@@ -27,6 +30,16 @@ import {Tabs, Tab} from 'react-bootstrap'
 
     const {id, name, information, price, rating, category, reviews, avatar} = product; 
 //    console.log(reviews)
+
+      const handleCount = (symbol)=>{
+          if(symbol === '+'){
+            setCount(count+1)
+          }else{
+              count === 1 ? setCount(count):
+              setCount(count-1)
+          }
+            
+      }
    
     return (
         <>
@@ -80,18 +93,18 @@ import {Tabs, Tab} from 'react-bootstrap'
                         <select className='rounded'>
                         <option value="grapefruit">L</option>
                         <option value="lime">LG</option>
-                        <option selected value="coconut">XL</option>
+                        <option value="coconut">XL</option>
                         <option value="mango">XXL</option>
                         </select>
                         </div>
                     </div>
                     <div className="row d-flex">
                     <div className="mr-auto p-2 bg-lighterblue rounded">
-                        <button className='border-0 bg-lighterblue cblue mx-1'>+</button>
-                        <span className='mx-2'>2</span>
-                        <button className='border-0 bg-lighterblue cblue mx-1'>-</button>
+                        <button onClick={()=>handleCount('-')} disabled={count ===  1?true:false} className='border-0 bg-lighterblue cblue mx-1'>-</button>
+                        <span className='mx-2'>{count}</span>
+                        <button onClick={()=>handleCount('+')} className='border-0 bg-lighterblue cblue mx-1'>+</button>
                     </div>
-                    <CatFav />
+                    <CatFav product={product} count={count}/>
                     </div>
                     <hr />
                     <div className='row p2'>
@@ -127,7 +140,7 @@ import {Tabs, Tab} from 'react-bootstrap'
                         <p className='pt-2'>Reviews goes here &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
                         {
                             reviews.map(review => (
-                                <div className='d-flex'>
+                                <div className='d-flex' key={review.id}>
                                     <p className='p2'> {review.user} </p>
                                     <p className='p1 cgray'> {review.review} </p>
                                 </div>

@@ -3,9 +3,12 @@ import Cost from '../Cost'
 import styles from './ProductCard.module.css'
 import CatFav from '../Cart/CatFav'
 import {Link} from 'react-router-dom'
+import {addToCart} from '../../actions/cartActions'
+import {useDispatch} from 'react-redux'
 
 
 const ProductCardList = ({product}) => {
+    const dispatch = useDispatch()
     const {id, name, information, price, reviews, avatar} = product;
     return (
         <div className='row ml-1 my-2'>
@@ -22,7 +25,7 @@ const ProductCardList = ({product}) => {
                 <hr />
                 <Cost price={price}/>
                 <p className='p1'>{information}</p>
-                 <CatFav />
+                 <CatFav product={product} count={1}/>
             </div>
             <div className='container'>
             <hr className='my-1'/>
